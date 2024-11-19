@@ -22,9 +22,9 @@ function throwDices(dices){
 }
 
 function throwD20(){
-    let result =  d20dices[0].roll();
-    alert(result);
-    displayResultOnLabel(result);
+    throwDices(d20dices);
+    let result = d20dices[0];
+    displayResultOnLabel(result.getCurrentValue());
     return result;
 }
 
