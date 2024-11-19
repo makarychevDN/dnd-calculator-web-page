@@ -4,7 +4,7 @@ class Dice{
     }
 
     roll(){
-        return getRandomInteger(0, this.maxValue);  
+        return getRandomInteger(1, this.maxValue);  
     }
 }
 
