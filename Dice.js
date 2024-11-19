@@ -1,10 +1,16 @@
 class Dice{
     constructor(maxValue){
-        this.maxValue = maxValue;
+        this._maxValue = maxValue;
+        this._currentValue = 0;
     }
 
     roll(){
-        return getRandomInteger(1, this.maxValue);  
+        this._currentValue = getRandomInteger(1, this._maxValue);
+        return this._currentValue;
+    }
+
+    getCurrentValue(){
+        return this._currentValue;
     }
 }
 
