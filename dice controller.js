@@ -5,8 +5,10 @@ function throwD20(diceCount, sortingMode){
     }
 
     d20Dices = rollDices(d20Dices);
-
+    
     if(sortingMode){
+        //sort the array in increasing order if sortingMod is more than 0 
+        //and in decreasing order if less than 0
         d20Dices.sort((a, b) => (a.getCurrentValue() - b.getCurrentValue()) * -sortingMode);
     }
 
