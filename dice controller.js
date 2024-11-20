@@ -20,7 +20,7 @@ function throwD20(diceCount, sortingMode){
 function rollDices(dices){
     dices.forEach(dice => {
         console.log(dice.roll());
-        spawnDiceButton("d20-dices-parent", dice.getCurrentValue());
+        //spawnDiceButton("d20-dices-parent", dice.getCurrentValue());
     });
     
     return dices;
