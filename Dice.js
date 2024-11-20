@@ -1,12 +1,12 @@
 class Dice{
-    static dicesCount = 0;
+    static #diceCount = 0;
 
     constructor(maxValue){
         this._maxValue = maxValue;
         this._currentValue = 0;
 
-        diceCount++;
-        this._rollEventName = `dice${diceCount}RollEvent`;
+        Dice.#diceCount++;
+        this._rollEventName = `dice${Dice.#diceCount}RollEvent`;
         this._onRollEvenet = new CustomEvent(this._rollEventName, {detail: this._currentValue});
     }
 
