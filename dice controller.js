@@ -4,14 +4,6 @@ window.onload = function() {
     document.getElementById("throw-d20-with-disadvantage-button").addEventListener("click", throwD20WithDisadvantage);
 }
 
-function spawnDiceButton() {
-    let parent = document.getElementById("dices-parent");
-    let diceButton = document.createElement("button");
-    diceButton.style = "my-button";
-    diceButton.textContent = "d20";
-    parent.appendChild(diceButton);
-}
-
 function spawnDiceButton(htmlParentId, text) {
     let parent = document.getElementById(htmlParentId);
     let diceButton = document.createElement("button");
