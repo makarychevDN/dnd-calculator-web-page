@@ -1,7 +1,12 @@
+* {
+  font-family: "Montserrat", serif;
+ }
+
 .my-button{
   background-color: white;
   color: gray;
   font-weight: bold;
+  font-size: medium;
   padding: 5px 10px;
   margin-right: 8px;
   border: none;
@@ -37,6 +42,6 @@ hr {
 }
 
 .limited-content{
-  max-width: 500px;
+  max-width: 550px;
   margin: auto;
 }
