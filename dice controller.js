@@ -9,6 +9,14 @@ window.onload = function() {
     d20dices = [dice1, dice2];
 }
 
+function spawnDiceButton() {
+    let parent = document.getElementById("dices-parent");
+    let diceButton = document.createElement("button");
+    diceButton.style = "my-button";
+    diceButton.textContent = "d20";
+    parent.appendChild(diceButton);
+}
+
 function displayResultOnLabel(value){
     document.getElementById("result-label").textContent = value;
 }
