@@ -7,7 +7,7 @@ class Dice{
 
         Dice.#diceCount++;
         this._rollEventName = `dice${Dice.#diceCount}RollEvent`;
-        this._onRollEvenet = new CustomEvent(this._rollEventName, {detail: this._currentValue});
+        this._onRollEvenet = new CustomEvent(this._rollEventName, {detail: {dice : this }});
     }
 
     roll(){
