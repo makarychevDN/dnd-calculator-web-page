@@ -1,12 +1,3 @@
-function spawnDiceButton(htmlParentId, text) {
-    let parent = document.getElementById(htmlParentId);
-    let diceButton = document.createElement("button");
-    parent.appendChild(diceButton);
-
-    diceButton.style = "my-button";
-    diceButton.textContent = text;
-}
-
 function displayResultOnLabel(value){
     document.getElementById("result-label").textContent = value;
 }
