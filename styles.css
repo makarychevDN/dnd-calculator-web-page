@@ -1,8 +1,37 @@
-.my-button {
-    background-color: #999;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.my-button{
+  background-color: white;
+  color: gray;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.my-button:hover {
+  background-color: #eee;
+  color: gray;
+}
+
+.group-layout{
+  background-color: white;
+  border-color: #ddd;
+  border-width: thin;
+  border-style:solid;
+  border-radius: 15px;
+  margin: 10;
+  padding: 20;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin-top: 20;
+  margin-bottom: 20;
+}
+
+.global-background-color{
+  background-color: #eee;
+}

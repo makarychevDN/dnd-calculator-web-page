@@ -2,16 +2,23 @@
     <head>
         <meta charset="UTF-8">
         <title>D&D Calculator</title>
+
         <link rel="stylesheet" href="styles.css">
         <script type = "text/javascript" src="dice controller.js"></script>
         <script type = "text/javascript" src="dice.js"></script>
     </head>
 
-    <body>
-        <button id="throw-d20-button" class="my-button"">d20</button>
-        <button id="throw-d20-with-advantage-button" class="my-button"">d20 with advantage</button>
-        <button id="throw-d20-with-disadvantage-button" class="my-button"">d20 with disadvantage</button>
-        <label>result: </label>
-        <label id="result-label"></label>
+    <body class="global-background-color">
+        <div class="group-layout">
+            <div><b>Попадание </b><label id="result-label">15</label></div>
+            <p></p>
+            <div>сила: 5</div>
+            <div>бонус мастерства: 10</div>
+            <div>дайс: 6  </div>
+            <hr>
+            <button id="throw-d20-button" class="my-button"">d20</button>
+            <button id="throw-d20-with-advantage-button" class="my-button"">d20 с преимуществом</button>
+            <button id="throw-d20-with-disadvantage-button" class="my-button"">d20 с помехой</button>
+        </div>
     </body>
 </html>
