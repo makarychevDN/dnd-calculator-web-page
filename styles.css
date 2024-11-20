@@ -35,3 +35,8 @@ hr {
 .global-background-color{
   background-color: #eee;
 }
+
+.limited-content{
+  max-width: 500px;
+  margin: auto;
+}
