@@ -1,7 +1,3 @@
-function displayResultOnLabel(value){
-    document.getElementById("result-label").textContent = value;
-}
-
 function throwD20(diceCount, sortingMode){
     let d20Dices = [];
     for(let i = 0; i < diceCount; i++){
