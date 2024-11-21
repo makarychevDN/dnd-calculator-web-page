@@ -11,8 +11,13 @@ window.onload = function() {
 
 function spawnD20DiceButtons(parameter){
     for(let dice of parameter.detail.dices){
-        spawnDiceButton("d20-dices-parent", dice.getCurrentValue());
+        let spawnedButton = spawnDiceButton("d20-dices-parent", dice.getCurrentValue());
+        addEventListener(dice.getUnicRollEventName(), function (parameter) {updateDiceButtonTextDueDiceValue(spawnedButton, parameter.detail.dice);});
     }
+}
+
+function updateDiceButtonTextDueDiceValue(diceButton, dice){
+    diceButton.textContent = dice.getCurrentValue();
 }
 
 function spawnDiceButton(htmlParentId, text) {
@@ -22,6 +27,8 @@ function spawnDiceButton(htmlParentId, text) {
 
     diceButton.style = "my-button";
     diceButton.textContent = text;
+
+    return diceButton;
 }
 
 function displayResultOnLabel(value){
