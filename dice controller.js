@@ -3,6 +3,7 @@ function throwD20(diceCount, sortingMode){
     for(let i = 0; i < diceCount; i++){
         d20Dices.push(new Dice(20));
     }
+    dispatchEvent(new CustomEvent(getNameOfD20DicesAddedEvent(), {detail: { dices : d20Dices}}));
 
     d20Dices = rollDices(d20Dices);
     
@@ -20,8 +21,11 @@ function throwD20(diceCount, sortingMode){
 function rollDices(dices){
     dices.forEach(dice => {
         console.log(dice.roll());
-        //spawnDiceButton("d20-dices-parent", dice.getCurrentValue());
     });
     
     return dices;
+}
+
+function getNameOfD20DicesAddedEvent(){
+    return "newD20DicesAdded";
 }
