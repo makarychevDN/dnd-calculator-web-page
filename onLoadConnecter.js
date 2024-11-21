@@ -12,7 +12,8 @@ window.onload = function() {
 function spawnD20DiceButtons(parameter){
     for(let dice of parameter.detail.dices){
         let spawnedButton = spawnDiceButton("d20-dices-parent", dice.getCurrentValue());
-        addEventListener(dice.getUnicRollEventName(), function (parameter) {updateDiceButtonTextDueDiceValue(spawnedButton, parameter.detail.dice);});
+        addEventListener(dice.getUnicRollEventName(), function (parameter) {updateDiceButtonTextDueDiceValue(spawnedButton, parameter.detail.dice)});
+        spawnedButton.addEventListener("click", function() {dice.roll()})
     }
 }
 
