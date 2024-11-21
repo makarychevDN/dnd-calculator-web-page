@@ -6,7 +6,20 @@ window.onload = function() {
     document.getElementById("throw-d20-with-advantage-button").addEventListener("click", function() { throwD20(2, advantageThrowModeValue) });
     document.getElementById("throw-d20-with-disadvantage-button").addEventListener("click", function() { throwD20(2, disadvantageThrowModeValue) });
 
-    addEventListener(getNameOfD20DicesAddedEvent(), function(parameter) {spawnD20DiceButtons(parameter)});
+    addEventListener(getNameOfD20DicesAddedEvent(), function(parameter) {drawNewD20DiceButtons(parameter)});
+}
+
+function drawNewD20DiceButtons(parameter){
+    removeOldD20DiceButtons();
+    spawnD20DiceButtons(parameter);
+}
+
+function removeOldD20DiceButtons(){
+    myNode = document.getElementById("d20-dices-parent")
+    while (myNode.lastElementChild) {
+        myNode.lastElementChild.removeEventListener("click", function (parameter) {updateDiceButtonTextDueDiceValue(spawnedButton, parameter.detail.dice)});
+        myNode.removeChild(myNode.lastElementChild);
+    }
 }
 
 function spawnD20DiceButtons(parameter){
