@@ -14,7 +14,8 @@ function throwD20(diceCount, sortingMode){
     }
 
     let result = d20Dices[0];
-    displayResultOnLabel(result.getCurrentValue());
+    //displayResultOnLabel(result.getCurrentValue());
+    dispatchEvent(new CustomEvent(getNameOfD20DicesAreThrownEvent(), {detail: { result : result}}));
     return result;
 }
 
@@ -28,4 +29,8 @@ function rollDices(dices){
 
 function getNameOfD20DicesAddedEvent(){
     return "newD20DicesAdded";
+}
+
+function getNameOfD20DicesAreThrownEvent(){
+    return "newD20DicesThrown";
 }
