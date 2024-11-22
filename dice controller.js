@@ -1,36 +1,31 @@
 function throwD20(diceCount, sortingMode){
     let d20Dices = [];
     for(let i = 0; i < diceCount; i++){
-        d20Dices.push(new Dice(20));
+        let newDIce = new Dice(20);
+        d20Dices.push(newDIce);
+        newDIce.roll();
+        addEventListener(newDIce.getUnicRollEventName(), function() {selectCorrectD20Dice(d20Dices, sortingMode)})
     }
     dispatchEvent(new CustomEvent(getNameOfD20DicesAddedEvent(), {detail: { dices : d20Dices}}));
 
-    d20Dices = rollDices(d20Dices);
-    
-    if(sortingMode){
-        //sort the array in increasing order if sortingMod is more than 0 
-        //and in decreasing order if less than 0
-        d20Dices.sort((a, b) => (a.getCurrentValue() - b.getCurrentValue()) * -sortingMode);
-    }
-
-    let result = d20Dices[0];
-    //displayResultOnLabel(result.getCurrentValue());
-    dispatchEvent(new CustomEvent(getNameOfD20DicesAreThrownEvent(), {detail: { result : result}}));
-    return result;
+    return selectCorrectD20Dice(d20Dices, sortingMode);
 }
 
-function rollDices(dices){
-    dices.forEach(dice => {
-        console.log(dice.roll());
-    });
-    
-    return dices;
+function selectCorrectD20Dice(d20Dices, sortingMode){
+    if(sortingMode){
+        //sort the array in decreasing order if sortingMod is more than 0 
+        //and in increasing order if less than 0
+        d20Dices = d20Dices.sort((a, b) => (a.getCurrentValue() - b.getCurrentValue()) * -sortingMode);
+    }
+
+    dispatchEvent(new CustomEvent(getNameOfD20CorrectDiceIsSelected(), {detail: { result : d20Dices[0]}}));
+    return d20Dices[0];
 }
 
 function getNameOfD20DicesAddedEvent(){
     return "newD20DicesAdded";
 }
 
-function getNameOfD20DicesAreThrownEvent(){
-    return "newD20DicesThrown";
+function getNameOfD20CorrectDiceIsSelected(){
+    return "correctD20DiceIsSelected";
 }

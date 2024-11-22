@@ -7,7 +7,7 @@ window.onload = function() {
     document.getElementById("throw-d20-with-disadvantage-button").addEventListener("click", function() { throwD20(2, disadvantageThrowModeValue) });
 
     addEventListener(getNameOfD20DicesAddedEvent(), function(parameter) {drawNewD20DiceButtons(parameter)});
-    addEventListener(getNameOfD20DicesAreThrownEvent(), function(parameter) {displayResultOnLabel(parameter.detail.result.getCurrentValue())});
+    addEventListener(getNameOfD20CorrectDiceIsSelected(), function(parameter) {displayResultOnLabel(parameter.detail.result.getCurrentValue())});
 }
 
 function drawNewD20DiceButtons(parameter){
