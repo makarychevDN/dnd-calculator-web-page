@@ -19,5 +19,6 @@ window.onload = function() {
         });
 
     addEventListener(getNameOfD20DicesAddedEvent(), function(parameter) {drawNewD20DiceButtons(parameter)});
-    addEventListener(getNameOfD20CorrectDiceIsSelected(), function(parameter) {displayResultOnLabel(parameter.detail.result.getCurrentValue())});
+    addEventListener(getNameOfD20CorrectDiceIsSelected(), function(parameter) {displayResultOnLabel(
+        parameter.detail.result.getCurrentValue() + currentCharacter.getProficiencyBonus() + currentCharacter.getStrengthModificator())});
 }
