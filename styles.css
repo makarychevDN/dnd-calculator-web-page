@@ -45,3 +45,18 @@ hr {
   max-width: 550px;
   margin: auto;
 }
+
+select{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  color: gray;
+  font-weight: bold;
+  font-size: small;
+  border-radius: 5px;
+}
+
+select:hover {
+  background-color: #eee;
+  color: gray;
+}
