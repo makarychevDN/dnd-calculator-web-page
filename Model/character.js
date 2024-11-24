@@ -1,11 +1,13 @@
 class Character{
-    constructor(strength, dexterity, constitution, intelligence, wisdom, charisma, proficiencyBonus){
+    constructor(strength, dexterity, constitution, intelligence, wisdom, charisma, lastUsedCharacteristicIndex, proficiencyBonus){
         this._strength = strength;
         this._dexterity = dexterity;
         this._constitution = constitution;
         this._intelligence = intelligence;
         this._wisdom = wisdom;
         this._charisma = charisma;
+
+        this._lastUsedCharacteristicIndex = lastUsedCharacteristicIndex;
 
         this._proficiencyBonus = proficiencyBonus;
     }
@@ -16,6 +18,14 @@ class Character{
     getIntelligenceModificator(){ return this.getModificatorOfCharacteristic(this._intelligence)}
     getWisdomModificator(){ return this.getModificatorOfCharacteristic(this._wisdom)}
     getCharismaModificator(){ return this.getModificatorOfCharacteristic(this._charisma)}
+
+    getLastUsedCharacteristicModificator(){
+        return this.getModificatorOfCharacteristic(this[this._lastUsedCharacteristicIndex]);
+    }
+
+    setLastUsedCharacteristic(indexOfCharacterstic){
+        this._lastUsedCharacteristicIndex = indexOfCharacterstic;
+    }
     
     getProficiencyBonus(){ return this._proficiencyBonus}
 
