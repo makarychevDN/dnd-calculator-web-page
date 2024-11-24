@@ -15,6 +15,7 @@
         <script type = "text/javascript" src="Controllers/diceController.js"></script>
         <script type = "text/javascript" src="Controllers/htmlUpdater.js"></script>
         <script type = "text/javascript" src="Controllers/onLoadConnector.js"></script>
+
         <script type = "text/javascript" src="Controllers/dataLoader.js"></script>
     </head>
 
@@ -27,7 +28,7 @@
             </div>
             <p></p>
             <label>модификатор</label>
-            <select name="language" id="language">
+            <select id="selected-modificator">
                 <option value="strength">силы: 5</option>
                 <option value="dexterity">ловкости: 5</option>
                 <option value="constitution">выносливости: 5</option>
@@ -35,7 +36,7 @@
                 <option value="wisdom">мудрости: 5</option>
                 <option value="charisma">харизмы: 5</option>
             </select>
-            <div>бонус мастерства: 10</div>
+            <div>бонус мастерства: <label id="proficiency-bonus-label">модификатор</label></div>
             <div id="d20-dices-parent">дайс: </div>
             <hr>
             <button id="throw-d20-button" class="my-button">d20</button>

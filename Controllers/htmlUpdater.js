@@ -40,3 +40,21 @@ function updateDiceButtonTextDueDiceValue(diceButton, dice){
 function displayResultOnLabel(value){
     document.getElementById("result-label").textContent = value;
 }
+
+function updateSelectModificatorMenu(character){
+    document.getElementById("selected-modificator").options[0].innerHTML = `силы: ${character.getStrengthModificator()}`;
+    document.getElementById("selected-modificator").options[1].innerHTML = `ловкости: ${character.getDexterityModificator()}`;
+    document.getElementById("selected-modificator").options[2].innerHTML = `выносливости: ${character.getConstitutionModificator()}`;
+    document.getElementById("selected-modificator").options[3].innerHTML = `интеллекта: ${character.getIntelligenceModificator()}`;
+    document.getElementById("selected-modificator").options[4].innerHTML = `мудрости: ${character.getWisdomModificator()}`;
+    document.getElementById("selected-modificator").options[5].innerHTML = `харизмы: ${character.getCharismaModificator()}`;
+}
+
+function updateProficiencyBonus(character){
+    document.getElementById("proficiency-bonus-label").textContent = character.getProficiencyBonus();
+}
+
+function updateCharacterCharacteristicsOnD20Panel(character){
+    updateProficiencyBonus(character);
+    updateSelectModificatorMenu(character);
+}

@@ -5,6 +5,8 @@ loadCharacter();
 function loadCharacter(){
     let loadedCharacterAsJson = loadCharacterJson(); 
     currentCharacter = parseJsonToCharacter(loadedCharacterAsJson);
+    let onCurrentCharacterIsSetted = new CustomEvent("characterIsSetted", {detail: {character : currentCharacter }});
+    dispatchEvent(onCurrentCharacterIsSetted);
 }
 
 function parseJsonToCharacter(json){

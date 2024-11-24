@@ -16,6 +16,8 @@ class Character{
     getIntelligenceModificator(){ return this.getModificatorOfCharacteristic(this._intelligence)}
     getWisdomModificator(){ return this.getModificatorOfCharacteristic(this._wisdom)}
     getCharismaModificator(){ return this.getModificatorOfCharacteristic(this._charisma)}
+    
+    getProficiencyBonus(){ return this._proficiencyBonus}
 
     getModificatorOfCharacteristic(characteristic){
         return Math.floor(characteristic / 2) - 5;
