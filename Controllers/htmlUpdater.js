@@ -41,6 +41,12 @@ function displayResultOnLabel(value){
     document.getElementById("result-label").textContent = value;
 }
 
+function updateCharacterCharacteristicsOnD20Panel(character){
+    updateProficiencyBonus(character);
+    updateSelectModificatorMenu(character);
+    setSelectModificatorOption(character.getlastUsedCharacteristicIndex())
+}
+
 function updateSelectModificatorMenu(character){
     document.getElementById("selected-modificator").options[0].innerHTML = `силы: ${character.getStrengthModificator()}`;
     document.getElementById("selected-modificator").options[1].innerHTML = `ловкости: ${character.getDexterityModificator()}`;
@@ -54,7 +60,6 @@ function updateProficiencyBonus(character){
     document.getElementById("proficiency-bonus-label").textContent = character.getProficiencyBonus();
 }
 
-function updateCharacterCharacteristicsOnD20Panel(character){
-    updateProficiencyBonus(character);
-    updateSelectModificatorMenu(character);
+function setSelectModificatorOption(index){
+    document.getElementById("selected-modificator").selectedIndex = index;
 }

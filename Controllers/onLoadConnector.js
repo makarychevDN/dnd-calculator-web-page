@@ -5,7 +5,7 @@ window.onload = function() {
     addListenersForD20ThrowingButtons();
     addEventListener(getNameOfD20DicesAddedEvent(), function(parameter) {drawNewD20DiceButtons(parameter)});
     addEventListener(getNameOfD20CorrectDiceIsSelected(), function(parameter) {displayResultOnLabel(
-        parameter.detail.result.getCurrentValue() + currentCharacter.getProficiencyBonus() + currentCharacter.getStrengthModificator())});
+        parameter.detail.result.getCurrentValue() + currentCharacter.getProficiencyBonus() + currentCharacter.getLastUsedCharacteristicModificator())});
     addEventListener("characterIsSetted", function(parameter) {updateCharacterCharacteristicsOnD20Panel(parameter.detail.character)});
 
     updateCharacterCharacteristicsOnD20Panel(currentCharacter);

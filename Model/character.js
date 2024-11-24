@@ -19,8 +19,17 @@ class Character{
     getWisdomModificator(){ return this.getModificatorOfCharacteristic(this._wisdom)}
     getCharismaModificator(){ return this.getModificatorOfCharacteristic(this._charisma)}
 
+    getlastUsedCharacteristicIndex(){ return this._lastUsedCharacteristicIndex}
+
     getLastUsedCharacteristicModificator(){
-        return this.getModificatorOfCharacteristic(this[this._lastUsedCharacteristicIndex]);
+        switch (this._lastUsedCharacteristicIndex) {
+            case 0: return this.getStrengthModificator();
+            case 1: return this.getDexterityModificator();
+            case 2: return this.getConstitutionModificator();
+            case 3: return this.getIntelligenceModificator();
+            case 4: return this.getWisdomModificator();
+            case 5: return this.getCharismaModificator();
+        }
     }
 
     setLastUsedCharacteristic(indexOfCharacterstic){
