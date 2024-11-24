@@ -47,16 +47,21 @@ hr {
 }
 
 select{
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-size: medium;
+  padding-left: 0px;
+  border-radius: 5px;
+  border-color: #ddd;
   border: none;
+  appearance: none;
   color: gray;
   font-weight: bold;
   font-size: small;
-  border-radius: 5px;
 }
 
 select:hover {
   background-color: #eee;
   color: gray;
+  font-weight: bold;
+  font-size: small;
+  appearance: menulist;
 }
