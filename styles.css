@@ -32,6 +32,10 @@
   padding: 0px;
 }
 
+.d20-button:hover {
+  transform: scale(1.2, 1.2);
+}
+
 .group-layout{
   background-color: white;
   border-color: #ddd;
