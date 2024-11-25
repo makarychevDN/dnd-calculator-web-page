@@ -19,6 +19,19 @@
   color: gray;
 }
 
+.d20-button{
+  color: white; 
+  background-color: white; 
+  font-size: small; 
+  font-weight: bold; 
+  background-image: url('Images/d20.png'); 
+  background-size: 100% 100%; 
+  border: none; 
+  width: 22px;
+  text-align: center; 
+  padding: 0px;
+}
+
 .group-layout{
   background-color: white;
   border-color: #ddd;
