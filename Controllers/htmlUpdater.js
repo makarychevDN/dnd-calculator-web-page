@@ -27,10 +27,24 @@ function spawnDiceButton(htmlParentId, text) {
     let diceButton = document.createElement("button");
     parent.appendChild(diceButton);
 
-    diceButton.style = "my-button";
+    setD20ButtonStyle(diceButton);
     diceButton.textContent = text;
 
     return diceButton;
+}
+
+function setD20ButtonStyle(diceButton){
+    diceButton.style = `
+    color: white; 
+    background-color: white; 
+    font-size: small; 
+    font-weight: bold; 
+    background-image: url('Images/d20.png'); 
+    background-size: 100% 100%; 
+    border: none; 
+    width: 22px;
+    text-align: center; 
+    padding: 0px`;
 }
 
 function updateDiceButtonTextDueDiceValue(diceButton, dice){
