@@ -36,6 +36,23 @@
   transform: scale(1.2, 1.2);
 }
 
+.falling-dice{
+  opacity: 0;
+  animation: falling-dice-animation 0.15s linear forwards;
+}
+
+@keyframes falling-dice-animation {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+}
+
+  to {
+      opacity: 1;
+      transform : translateY(0);
+  }
+}
+
 .group-layout{
   background-color: white;
   border-color: #ddd;
