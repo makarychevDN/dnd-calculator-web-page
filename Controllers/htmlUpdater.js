@@ -19,17 +19,15 @@ function spawnD20DiceButtons(parameter){
         let spawnedButton = spawnDiceButton("d20-dices-parent", dice.getCurrentValue());
 
         addEventListener(dice.getUnicRollEventName(), function (parameter) {updateDiceButtonTextDueDiceValue(spawnedButton, parameter.detail.dice)});
-        spawnedButton.addEventListener("click", function() {dice.roll()})
-        //spawnedButton.addEventListener("click", tempoararyAddThrowingAnimation(spawnedButton));
-        //tempoararyAddThrowingAnimation(spawnedButton);
-        spawnedButton.classList.add("falling-dice");
-        setTimeout(() => spawnedButton.classList.remove("falling-dice"), 0.15);
+        spawnedButton.addEventListener("click", function() {dice.roll()});
+        spawnedButton.addEventListener("click", function() {tempoararyAddThrowingAnimation(spawnedButton)});
+        tempoararyAddThrowingAnimation(spawnedButton);
     }
 }
 
 function tempoararyAddThrowingAnimation(documentElement){
-    //documentElement.classList.add("falling-dice");
-    //setTimeout(() => documentElement.classList.remove("falling-dice"), 0.15);
+    documentElement.classList.add("falling-dice");
+    setTimeout(() => documentElement.classList.remove("falling-dice"), 150);
 }
 
 function spawnDiceButton(htmlParentId, text) {
