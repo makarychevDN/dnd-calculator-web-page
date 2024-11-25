@@ -27,7 +27,7 @@ function addListenersToUpdateD20ThrowResults(){
     addEventListener("lastUsedCharacteristicIndexChanged", function(parameter) {
         displayResultOnLabel(
             calculateResultOfD20ThrowToDisplayOnLabel(
-                currentCorrectlyDice, 
+                getCurrentCorrectlyDice(), 
                 currentCharacter.getProficiencyBonus(), 
                 parameter.detail.modificator
             )
@@ -61,5 +61,11 @@ function calculateResultOfD20ThrowToDisplayOnLabel(d20Dice, proficiencyBonus, la
         return "";
     }
 
-    return d20Dice.getCurrentValue() + proficiencyBonus + lastSelectedCharacteristicModificator;
+    if(d20Dice.getCurrentValue() == 1)
+        return 1;
+    
+    let result = d20Dice.getCurrentValue() + proficiencyBonus + lastSelectedCharacteristicModificator;
+    result += d20Dice.getCurrentValue() == 20 ? " КРИТ" : "";
+
+    return result;
 }
