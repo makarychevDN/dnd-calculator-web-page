@@ -34,6 +34,8 @@ class Character{
 
     setLastUsedCharacteristic(indexOfCharacterstic){
         this._lastUsedCharacteristicIndex = indexOfCharacterstic;
+        dispatchEvent(new CustomEvent("lastUsedCharacteristicIndexChanged", 
+            {detail: {modificator : this.getLastUsedCharacteristicModificator() }}));
     }
     
     getProficiencyBonus(){ return this._proficiencyBonus}

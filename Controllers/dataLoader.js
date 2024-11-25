@@ -1,5 +1,3 @@
-let currentCharacter;
-
 loadCharacter();
 
 function loadCharacter(){

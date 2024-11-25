@@ -1,4 +1,5 @@
 let d20Dices;
+let currentCorrectlyDice;
 
 function throwD20(diceCount, sortingMode){
     d20Dices = [];
@@ -10,7 +11,7 @@ function throwD20(diceCount, sortingMode){
     }
     dispatchEvent(new CustomEvent(getNameOfD20DicesAddedEvent(), {detail: { dices : d20Dices}}));
 
-    return selectCorrectD20Dice(d20Dices, sortingMode);
+    return currentCorrectlyDice = selectCorrectD20Dice(d20Dices, sortingMode);
 }
 
 function selectCorrectD20Dice(dices, sortingMode){
