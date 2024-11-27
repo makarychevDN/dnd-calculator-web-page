@@ -36,6 +36,12 @@
   transform: scale(1.2, 1.2);
 }
 
+.column-block {
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+}
+
 .falling-dice{
   opacity: 0;
   animation: falling-dice-animation 0.15s linear forwards;
@@ -59,7 +65,10 @@
   border-width: thin;
   border-style:solid;
   border-radius: 15px;
-  margin: 10;
+  margin-top: 10;
+  margin-bottom: 10;
+  margin-left: 5;
+  margin-right: 5;
   padding: 20;
 }
 
@@ -75,8 +84,21 @@ hr {
   background-color: #eee;
 }
 
-.limited-content{
-  max-width: 550px;
+.middle-column-fixed-width{
+  min-width: 550px;
+}
+
+.right-column-fixed-width{
+  min-width: 300px;
+}
+
+.centered-page{
+  width: fit-content;
+  margin: auto;
+}
+
+.margin-auto{
+  align-items: center;
   margin: auto;
 }
 
