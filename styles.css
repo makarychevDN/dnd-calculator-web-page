@@ -2,7 +2,7 @@
   font-family: "Montserrat", serif;
  }
 
-.my-button{
+.generic-interactive-button{
   background-color: white;
   color: gray;
   font-weight: bold;
@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.my-button:hover {
+.generic-interactive-button:hover {
   background-color: #eee;
   color: gray;
 }
@@ -34,6 +34,16 @@
 
 .d20-button:hover {
   transform: scale(1.2, 1.2);
+}
+
+.left-column-button{
+  font-size: larger;
+  border: none;
+  margin: 5px;
+}
+
+.left-column-button:hover {
+  background-color: #ddd;
 }
 
 .column-block {
@@ -72,6 +82,15 @@
   padding: 20;
 }
 
+.invisible-group-layout{
+  border-radius: 15px;
+  margin-top: 10;
+  margin-bottom: 10;
+  margin-left: 5;
+  margin-right: 5;
+  padding: 20;
+}
+
 hr {
   border: none;
   height: 1px;
@@ -82,6 +101,11 @@ hr {
 
 .global-background-color{
   background-color: #eee;
+}
+
+.left-column-fixed-width{
+  min-width: 150px;
+  max-width: 150px;
 }
 
 .middle-column-fixed-width{
@@ -121,3 +145,25 @@ select:hover {
   font-size: small;
   appearance: menulist;
 }
+
+.health-slider{
+  width: 60%;
+  height: 15px;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #eee;
+  overflow: hidden;
+  border: solid 1px #ddd;
+}
+
+.health-slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 0px;
+  transform: translate(7px);
+  height: 100%;
+  box-shadow: -407px 0 0 400px #aa5050;
+  offset: 100px;
+}
+
+/*#5098aa;*/

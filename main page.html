@@ -21,13 +21,12 @@
 
     <body class="global-background-color">
         <div class="centered-page">
-            <div class="column-block">
-                <div>персонаж</div>
-                <div>калькулятор</div>
-                <div>инвентарь</div>
-                <div>журнал</div>
-            </div>
-            <div class="column-block middle-column-fixed-width">
+            <div class="column-block left-column-fixed-width invisible-group-layout">
+                <button class="left-column-button">персонаж</button>
+                <button class="left-column-button">калькулятор</button>
+                <button class="left-column-button">инвентарь</button>
+                <button class="left-column-button">журнал</button>
+            </div><div class="column-block middle-column-fixed-width">
                 <div class="group-layout">
                     <div style="font-size: x-large;">
                         <b>Попадание </b>
@@ -47,9 +46,9 @@
                     <div>бонус мастерства: <label id="proficiency-bonus-label">модификатор</label></div>
                     <div id="d20-dices-parent">дайс: </div>
                     <hr>
-                    <button id="throw-d20-button" class="my-button">d20</button>
-                    <button id="throw-d20-with-advantage-button" class="my-button">d20 с преимуществом</button>
-                    <button id="throw-d20-with-disadvantage-button" class="my-button">d20 с помехой</button>
+                    <button id="throw-d20-button" class="generic-interactive-button">d20</button>
+                    <button id="throw-d20-with-advantage-button" class="generic-interactive-button">d20 с преимуществом</button>
+                    <button id="throw-d20-with-disadvantage-button" class="generic-interactive-button   ">d20 с помехой</button>
                 </div>
 
                 <div class="group-layout">
@@ -66,7 +65,9 @@
                     <div>[удар топором]</div>
                 </div>
             </div><div class="column-block group-layout right-column-fixed-width">
-                <div>тут будет еще что-то</div>
+                <div> 
+                    <input type="range" value="5" max="15" class="health-slider">
+                </div>
             </div>
         </div>
     </body>
