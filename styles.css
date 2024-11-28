@@ -114,6 +114,7 @@ hr {
 
 .right-column-fixed-width{
   min-width: 300px;
+  max-width: 300px;
 }
 
 .centered-page{
@@ -147,7 +148,7 @@ select:hover {
 }
 
 .health-slider{
-  width: 60%;
+  width: auto;
   height: 15px;
   border-radius: 5px;
   -webkit-appearance: none;
@@ -155,13 +156,15 @@ select:hover {
   background: #eee;
   overflow: hidden;
   border: solid 1px #ddd;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
 }
 
 .health-slider::-webkit-slider-thumb{
   -webkit-appearance: none;
   width: 0px;
   transform: translate(7px);
-  height: 100%;
   box-shadow: -407px 0 0 400px #aa5050;
   offset: 100px;
 }
