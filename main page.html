@@ -46,9 +46,9 @@
                     <div>бонус мастерства: <label id="proficiency-bonus-label">модификатор</label></div>
                     <div id="d20-dices-parent">дайс: </div>
                     <hr>
-                    <button id="throw-d20-button" class="generic-interactive-button">d20</button>
-                    <button id="throw-d20-with-advantage-button" class="generic-interactive-button">d20 с преимуществом</button>
-                    <button id="throw-d20-with-disadvantage-button" class="generic-interactive-button   ">d20 с помехой</button>
+                    <button id="throw-d20-button" class="generic-interactive-button" style=" margin-right: 8px;">d20</button>
+                    <button id="throw-d20-with-advantage-button" class="generic-interactive-button" style=" margin-right: 8px;">d20 с преимуществом</button>
+                    <button id="throw-d20-with-disadvantage-button" class="generic-interactive-button" style=" margin-right: 8px;">d20 с помехой</button>
                 </div>
 
                 <div class="group-layout">
@@ -67,13 +67,16 @@
             </div><div class="column-block group-layout right-column-fixed-width">
                 <div> 
                     <label>здоровье: 10</label>
-                    
-                    <div>
-                        <button class="generic-interactive-button">+</button>
-                        <button class="generic-interactive-button">-</button>
-                        <input type="range" value="5" max="15" class="health-slider">
+                    <div class="centered-page" style="  width: 100%;">
+                        <input type="range" value="5" max="15" class="health-slider"">
+                        <div class="column-block">
+                            <button class="generic-interactive-button">-</button>   
+                            <input type="text" style="text-align: center;" class="generic-text-input" value="1">
+                            <button class="generic-interactive-button">+</button>
+                        </div>
                     </div>
                 </div>
+                <hr>
             </div>
         </div>
     </body>

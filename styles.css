@@ -8,7 +8,6 @@
   font-weight: bold;
   font-size: small  ;
   padding: 5px 10px;
-  margin-right: 8px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -49,7 +48,6 @@
 .column-block {
   display: inline-block;
   vertical-align: top;
-  list-style: none;
 }
 
 .falling-dice{
@@ -117,6 +115,10 @@ hr {
   max-width: 300px;
 }
 
+.health-bar-buttons-group{
+  max-width: fit-content;
+}
+
 .centered-page{
   width: fit-content;
   margin: auto;
@@ -148,7 +150,7 @@ select:hover {
 }
 
 .health-slider{
-  width: auto;
+  width: calc(100% - 96px);
   height: 15px;
   border-radius: 5px;
   -webkit-appearance: none;
@@ -167,6 +169,11 @@ select:hover {
   transform: translate(7px);
   box-shadow: -407px 0 0 400px #aa5050;
   offset: 100px;
+}
+
+.generic-text-input{
+  border: solid 1px #ddd;
+  width: 30px;
 }
 
 /*#5098aa;*/
