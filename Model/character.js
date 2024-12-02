@@ -25,6 +25,9 @@ class Character{
 
     getlastUsedCharacteristicIndex(){ return this._lastUsedCharacteristicIndex}
 
+    getCurrentHealth(){return this._currentHealth};
+    getMaxHealth(){return this._maxHealth};
+
     getLastUsedCharacteristicModificator(){
         switch (this._lastUsedCharacteristicIndex) {
             case 0: return this.getStrengthModificator();
@@ -40,6 +43,14 @@ class Character{
         this._lastUsedCharacteristicIndex = indexOfCharacterstic;
         dispatchEvent(new CustomEvent("lastUsedCharacteristicIndexChanged", 
             {detail: {modificator : this.getLastUsedCharacteristicModificator() }}));
+    }
+
+    setMaxHealt(value){
+        this._maxHealth = value;
+    }
+
+    setCurrentHealth(value){
+        this._currentHealth = value;
     }
     
     getProficiencyBonus(){ return this._proficiencyBonus}

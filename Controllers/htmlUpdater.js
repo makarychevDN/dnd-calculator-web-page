@@ -54,6 +54,7 @@ function updateCharacterCharacteristicsOnD20Panel(character){
     updateProficiencyBonus(character);
     updateSelectModificatorMenu(character);
     setSelectModificatorOption(character.getlastUsedCharacteristicIndex())
+    updateHealthBar(character);
 }
 
 function updateSelectModificatorMenu(character){
@@ -71,4 +72,10 @@ function updateProficiencyBonus(character){
 
 function setSelectModificatorOption(index){
     document.getElementById("selected-modificator").selectedIndex = index;
+}
+
+function updateHealthBar(character){
+    document.getElementById("health-label").textContent = character.getCurrentHealth();
+    document.getElementById("health-bar").max = character.getMaxHealth();
+    document.getElementById("health-bar").value = character.getCurrentHealth();
 }
