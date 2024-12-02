@@ -1,15 +1,19 @@
 class Character{
-    constructor(strength, dexterity, constitution, intelligence, wisdom, charisma, lastUsedCharacteristicIndex, proficiencyBonus){
+    constructor(strength, dexterity, constitution, intelligence, wisdom, charisma, lastUsedCharacteristicIndex, 
+        proficiencyBonus, maxHealth, currentHealth){
         this._strength = strength;
         this._dexterity = dexterity;
         this._constitution = constitution;
         this._intelligence = intelligence;
         this._wisdom = wisdom;
         this._charisma = charisma;
-
         this._lastUsedCharacteristicIndex = lastUsedCharacteristicIndex;
 
         this._proficiencyBonus = proficiencyBonus;
+
+        this._maxHealth = maxHealth;
+        this._currentHealth = currentHealth;
+        if(this._currentHealth > this._maxHealth) this._currentHealth = maxHealth;
     }
 
     getStrengthModificator(){ return this.getModificatorOfCharacteristic(this._strength)}
