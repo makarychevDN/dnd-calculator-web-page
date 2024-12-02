@@ -87,12 +87,37 @@ function addListenersToHealthButtonsEvents(){
     document.getElementById("decrease-health-button").addEventListener("click", 
         function() {
             currentCharacter.decreaseCurrentHealth(changeHealthInputField.value);
+            changeHealthInputField.value = 1;
         }
     );
 
     document.getElementById("increase-health-button").addEventListener("click", 
         function() {
             currentCharacter.increaseCurrentHealth(changeHealthInputField.value);
+            changeHealthInputField.value = 1;
         }
-    );        
+    );
+    
+    changeHealthInputField.addEventListener("input", 
+        function() {
+
+            let correctedValue = changeHealthInputField.value;
+
+            if(isNaN(Number(correctedValue))){
+                correctedValue = Array.from(correctedValue)
+                    .filter(char => !isNaN(Number(char)))
+                    .join("");
+            }
+
+            while(correctedValue[0] == "0"){
+                correctedValue = correctedValue.slice(1);
+            }
+
+            if(!correctedValue){
+                correctedValue = 0;
+            }
+
+            changeHealthInputField.value = correctedValue;
+        }
+    );
 }
