@@ -59,6 +59,10 @@ class Character{
 
     increaseCurrentHealth(value){
         this._currentHealth += Number(value);
+
+        if(this._currentHealth > this._maxHealth)
+            this._currentHealth = this._maxHealth;
+
         dispatchEvent(new CustomEvent("healthUpdated", 
             {detail: {character : this }}));
     }
