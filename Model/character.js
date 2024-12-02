@@ -52,7 +52,7 @@ class Character{
     }
 
     setCurrentHealth(value){
-        this._currentHealth = value;
+        this._currentHealth = Number(value);
         dispatchEvent(new CustomEvent("healthUpdated", 
             {detail: {character : this }}));
     }
