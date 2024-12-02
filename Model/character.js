@@ -45,12 +45,26 @@ class Character{
             {detail: {modificator : this.getLastUsedCharacteristicModificator() }}));
     }
 
-    setMaxHealt(value){
+    setMaxHealth(value){
         this._maxHealth = value;
+        dispatchEvent(new CustomEvent("healthUpdated", 
+            {detail: {character : this }}));
     }
 
     setCurrentHealth(value){
         this._currentHealth = value;
+        dispatchEvent(new CustomEvent("healthUpdated", 
+            {detail: {character : this }}));
+    }
+
+    increaseCurrentHealth(value){
+        this._currentHealth += Number(value);
+        dispatchEvent(new CustomEvent("healthUpdated", 
+            {detail: {character : this }}));
+    }
+
+    decreaseCurrentHealth(value){
+        this.increaseCurrentHealth(-value);
     }
     
     getProficiencyBonus(){ return this._proficiencyBonus}

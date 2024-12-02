@@ -54,7 +54,6 @@ function updateCharacterCharacteristicsOnD20Panel(character){
     updateProficiencyBonus(character);
     updateSelectModificatorMenu(character);
     setSelectModificatorOption(character.getlastUsedCharacteristicIndex())
-    updateHealthBar(character);
 }
 
 function updateSelectModificatorMenu(character){

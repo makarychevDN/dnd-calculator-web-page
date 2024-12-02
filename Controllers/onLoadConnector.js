@@ -9,8 +9,14 @@ window.onload = function() {
     addEventListener("characterIsSetted", function(parameter) {updateCharacterCharacteristicsOnD20Panel(parameter.detail.character)});
     updateCharacterCharacteristicsOnD20Panel(currentCharacter);
 
+
+    addEventListener("healthUpdated", function(parameter) {updateHealthBar(parameter.detail.character)});
+    updateHealthBar(currentCharacter);
+
     let selectModificatorMenu = document.getElementById("selected-modificator");
     selectModificatorMenu.addEventListener("change", function(){currentCharacter.setLastUsedCharacteristic(selectModificatorMenu.selectedIndex)});
+    addListenersToHealthBarEvents();
+    addListenersToHealthButtonsEvents();
 }
 
 function addListenersToUpdateD20ThrowResults(){
@@ -68,4 +74,25 @@ function calculateResultOfD20ThrowToDisplayOnLabel(d20Dice, proficiencyBonus, la
     result += d20Dice.getCurrentValue() == 20 ? " КРИТ" : "";
 
     return result;
+}
+
+function addListenersToHealthBarEvents(){
+    let healthBar = document.getElementById("health-bar");
+    healthBar.addEventListener("input", function(){currentCharacter.setCurrentHealth(healthBar.value)});
+}
+
+function addListenersToHealthButtonsEvents(){
+    let changeHealthInputField = document.getElementById("change-health-input-field");
+
+    document.getElementById("decrease-health-button").addEventListener("click", 
+        function() {
+            currentCharacter.decreaseCurrentHealth(changeHealthInputField.value);
+        }
+    );
+
+    document.getElementById("increase-health-button").addEventListener("click", 
+        function() {
+            currentCharacter.increaseCurrentHealth(changeHealthInputField.value);
+        }
+    );        
 }
