@@ -16,5 +16,15 @@ function parseJsonToCharacter(json){
 
 function loadCharacterJson(){
     //todo make it work like it is supposed to
-    return JSON.stringify(new Character(20, 11, 16, 8, 12, 9, 5, 3, 18, 12)); 
+    return JSON.stringify(
+        new Character(
+            20, 11, 16, 8, 12, 9, 5, 
+            3, 
+            18, 12, 
+            {
+                "золото" : 9,
+                "серебро" : 23,
+                "золото" : 14,
+            }
+    )); 
 }
